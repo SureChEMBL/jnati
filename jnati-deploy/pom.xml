@@ -26,26 +26,26 @@
 	
 	<scm>
 		<connection>
-			scm:svn:https://jnati.svn.sourceforge.net/svnroot/jni-inchi/trunk
+			scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/trunk
 		</connection>
 		<developerConnection>
-			scm:svn:https://jnati.svn.sourceforge.net/svnroot/jni-inchi/trunk
+			scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/trunk
 		</developerConnection>
-		<url>http://jnati.svn.sourceforge.net/svnroot/jni-inchi/trunk</url>
+		<url>http://jnati.svn.sourceforge.net/svnroot/jnati/trunk</url>
 	</scm>
 
 	<distributionManagement>
 		<site>
 			<id>jnati.sourceforge.net</id>
-			<url>scp://shell.sourceforge.net/home/groups/j/jn/jni-inchi/htdocs</url>
+			<url>scp://shell.sourceforge.net/home/groups/j/jn/jnati/htdocs</url>
 		</site>
 		<repository>
 			<id>jnati.sourceforge.net</id>
-			<url>scp://shell.sourceforge.net/home/groups/j/jn/jni-inchi/htdocs/m2repo</url>
+			<url>scp://shell.sourceforge.net/home/groups/j/jn/jnati/htdocs/m2repo</url>
 		</repository>
 		<snapshotRepository>
 			<id>jnati.sourceforge.net</id>
-			<url>scp://shell.sourceforge.net/home/groups/j/jn/jni-inchi/htdocs/m2-snapshot-repo</url>
+			<url>scp://shell.sourceforge.net/home/groups/j/jn/jnati/htdocs/m2-snapshot-repo</url>
 		</snapshotRepository>
 	</distributionManagement>
 
