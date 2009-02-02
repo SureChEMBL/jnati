@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>net.sf.jnati</groupId>
+  <artifactId>jnati-envtool</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  
+  <name>Environmental variable tool</name>
+  <url>http://jnati.sourceforge.net/</url>
+  <description>A library for manipulating system environmental variables</description>
+
+  <licenses>
+    <license>
+      <name>GNU Lesser General Public License</name>
+      <url>http://www.gnu.org/licenses/</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>
+      scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati
+    </connection>
+    <developerConnection>
+      scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati
+    </developerConnection>
+    <tag>HEAD</tag>
+    <url>http://jnati.svn.sourceforge.net/svnroot/jnati</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>sea36</id>
+      <name>Sam Adams</name>
+      <email>sea36::at::users.sourceforge.net</email>
+      <organization>UCC, Cambridge</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.1</version>
+        
+        <executions>
+
+          <execution>
+            <id>build-native</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>make</executable>
+              <arguments>
+                <argument>all</argument>
+              </arguments>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>clean-native</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>make</executable>
+              <arguments>
+                <argument>clean</argument>
+              </arguments>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+      
+    </plugins>
+
+
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.sf.jnati</groupId>
+      <artifactId>jnati-deploy</artifactId>
+      <version>0.1-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.4</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <reporting>
+     <plugins>
+       <plugin>
+         <artifactId>maven-javadoc-plugin</artifactId>
+         <configuration>
+           <quiet>true</quiet>
+         </configuration>
+       </plugin>
+    </plugins>
+  </reporting>
+  
+  <repositories>
+    <repository>
+      <id>wwmm</id>
+      <url>http://wwmm.ch.cam.ac.uk/maven2</url>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>wwmm-dav</id>
+      <url>dav:http://wwmm.ch.cam.ac.uk/maven2</url>
+    </repository>
+  </distributionManagement>
+
+</project>

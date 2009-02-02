@@ -1,0 +1,14 @@
+#
+# Platform (operating system) definitions for use by net.sf.jnati.SystemTool
+#
+# Lines starting '#' and empty lines are ignored.
+# Other lines consist of two fields separated by whitespace: the first field
+# contains the platform name, and the second a regular expression to be matched
+# against the 'os.name' system property. Patterns are case insensitive, and
+# must match the entire value. The first match made is returned, so more
+# specific patterns should be placed before more lax ones.
+#
+
+WINDOWS windows.*
+LINUX   linux.*
+MAC     mac.*

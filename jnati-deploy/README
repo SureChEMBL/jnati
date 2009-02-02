@@ -1,0 +1,64 @@
+
+While the Java code is cross-platfrom, the sometimes interfaces to legacy code
+(e.g. C/C++ libraries) are necessary, and these require compilation for
+specific operating systems and architecture. jnati provides a mechanism for
+providing precompiled binaries for a number of different platforms, and
+automatically deploying and loading the appropriate one for a system.
+
+Collections of native files are termed 'artefacts', and identified by an
+artefact ID and version. The contents of an artefact are described using a
+manifest file (MANIFEST.xml) which lists all the files in the artefact, and
+indicates which are executable, and which are libraries to be loaded.
+
+Native code is loaded using either the net.sf.jnati.deploy.NativeartefactLocator
+or net.sf.jnati.deploy.NativeLibraryLoader classes.
+
+These search for the correct version of the native artefact in the following
+locations:
+1) As files on the classpath (not inside a JAR)
+2) In the local repository (~/.jnati/repo)
+3) Inside a JAR, in which case they are extracted to the local repository
+4) In an online repository, in which case they are downloaded to the local
+   repository.
+
+
+FAQs
+
+How do I configure jnati/an artefact:
+
+jnati uses a hierarchical configuration, based on java properties files.
+Settings can be configured in the following locations, with decreasing priority:
+
+1) At runtime
+2) artefact settings file on classpath: /META-INF/jnati/{artefactId}.properties
+2) artefact settings file on system: ~/.jnati/{artefactId}.properties
+3) Global settings file on the classpath: /META-INF/jnati/jnati.properties
+4) Global settings file on system: ~/.jnati/jnati.properties
+
+
+Can I move my local repository?
+
+Set the following property:
+jnati.localRepository = {path to local repository}
+
+
+Can I force jnati to use a particular platform/architecture on my system?
+
+Set the following property:
+jnati.osarch = {operating system}-{architecture}
+or to only force this for a particular artefact:
+{artefactId}.osarch = {operating system}-{architecture}
+
+
+Can I specify an alternative online repository?
+
+Set the following property:
+jnati.repositoryUrls = http://foo.example.com/repo;http://bar.example.com/repo
+or for a particular artefact:
+{artefactId}.repositoryUrls = http://foo.example.com/repo;${jnati.repositoryUrls}
+
+
+Can I prevent jnati attempting to download artefacts?
+
+Set the following property:
+jnati.allowDownload = false

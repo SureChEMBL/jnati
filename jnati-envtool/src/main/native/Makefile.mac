@@ -1,0 +1,12 @@
+#
+# Makefile for EnvTool - Macintosh Settings
+#
+# Author: Sam Adams <sea36 at users.sourceforge.net>
+#         Unilever Centre for Molecular Science Informatics
+#         University Of Cambrige, UK
+#
+
+LDFLAGS = -dynamiclib -single_module
+
+LIB_PREFIX = lib
+LIB_SUFFIX = .jnilib

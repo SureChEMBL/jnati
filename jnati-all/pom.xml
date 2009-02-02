@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>net.sf.jnati</groupId>
+  <artifactId>jnati-all</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <name>Java Native Execution Framework</name>
+  <url>http://jnati.sourceforge.net/</url>
+  <description>
+    A framework for distributing, loading and running native code from
+    within java.
+  </description>
+
+  <licenses>
+    <license>
+      <name>GNU Lesser General Public License</name>
+      <url>http://www.gnu.org/licenses/</url>
+    </license>
+  </licenses>
+
+  <modules>
+    <module>../jnati-core</module>
+    <module>../jnati-deploy</module>
+    <module>../jnati-envtool</module>
+    <module>../jnati-proc</module>
+  </modules>
+
+
+  <scm>
+    <connection>
+      scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati
+    </connection>
+    <developerConnection>
+      scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati
+    </developerConnection>
+    <tag>HEAD</tag>
+    <url>http://jnati.svn.sourceforge.net/svnroot/jnati</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>sea36</id>
+      <name>Sam Adams</name>
+      <email>sea36::at::users.sourceforge.net</email>
+      <organization>UCC, Cambridge</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      
+    </plugins>
+
+  </build>
+
+  <repositories>
+    <repository>
+      <id>wwmm</id>
+      <url>http://wwmm.ch.cam.ac.uk/maven2</url>
+    </repository>
+  </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>wwmm-dav</id>
+      <url>dav:http://wwmm.ch.cam.ac.uk/maven2</url>
+    </repository>
+  </distributionManagement>
+  
+</project>
