@@ -1,0 +1,3 @@
+<manifest id="test-locate" version="1.0" platform="NOOS" architecture="NOARCH">
+  <file>testfile.txt</file>
+</manifest>

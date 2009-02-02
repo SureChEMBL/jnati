@@ -1,0 +1,15 @@
+#
+# Architecture definitions for use by net.sf.jnati.SystemTool
+#
+# Lines starting '#' and empty lines are ignored.
+# Other lines consist of two fields separated by whitespace: the first field
+# contains the architecture name, and the second a regular expression to be
+# matched against the 'os.arch' system property. Patterns are case insensitive,
+# and must match the entire value.  The first match made is returned, so more
+# specific patterns should be placed before more lax ones.
+#
+
+X86     .*86
+AMD64   amd64
+PPC     ppc
+X86_64  x86_64
