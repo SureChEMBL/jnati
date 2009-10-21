@@ -69,7 +69,7 @@ public class RemoteRepository extends ArtefactRepository {
 			in = url.openStream();
 		} catch (FileNotFoundException e) {
 			LOG.debug("Not found: " + url);
-			return null;
+			return Collections.emptyList();
 		}
 		LOG.debug("Downloading artefact: " + url);
 		FileUtils.writeStreamToFile(in, tempFile);
