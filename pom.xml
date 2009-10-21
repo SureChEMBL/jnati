@@ -6,7 +6,7 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>net.sf.jnati</groupId>
-  <artifactId>jnati-all</artifactId>
+  <artifactId>jnati-aggregator</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   
@@ -25,10 +25,10 @@
   </licenses>
 
   <modules>
-    <module>../jnati-core</module>
-    <module>../jnati-deploy</module>
-    <module>../jnati-envtool</module>
-    <module>../jnati-proc</module>
+    <module>jnati-core</module>
+    <module>jnati-deploy</module>
+    <module>jnati-envtool</module>
+    <module>jnati-proc</module>
   </modules>
 
 
