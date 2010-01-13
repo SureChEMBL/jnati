@@ -10,3 +10,4 @@ LDFLAGS = -dynamiclib -single_module
 
 LIB_PREFIX = lib
 LIB_SUFFIX = .jnilib
+CXXFLAGS += -I$(JAVA_HOME)/include/linux -arch i386 -arch x86_64
