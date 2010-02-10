@@ -1,87 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
->
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>net.sf.jnati</groupId>
-  <artifactId>jnati-aggregator</artifactId>
-  <version>0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  
-  <name>Java Native Execution Framework</name>
-  <url>http://jnati.sourceforge.net/</url>
-  <description>
-    A framework for distributing, loading and running native code from
-    within java.
-  </description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <licenses>
-    <license>
-      <name>GNU Lesser General Public License</name>
-      <url>http://www.gnu.org/licenses/</url>
-    </license>
-  </licenses>
+    <groupId>net.sf.jnati</groupId>
+    <artifactId>jnati</artifactId>
+    <version>0.2</version>
+    <packaging>pom</packaging>
 
-  <modules>
-    <module>jnati-core</module>
-    <module>jnati-deploy</module>
-    <module>jnati-envtool</module>
-    <module>jnati-proc</module>
-  </modules>
+    <name>Java Native Execution Framework</name>
+    <url>http://jnati.sourceforge.net/</url>
+    <description>
+        A framework for distributing, loading and running native code from
+        within java.
+    </description>
 
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License v3</name>
+            <url>http://www.gnu.org/licenses/lgpl.txt</url>
+        </license>
+        <license>
+            <name>GNU General Public License v3</name>
+            <url>http://www.gnu.org/licenses/gpl.txt</url>
+        </license>
+    </licenses>
 
-  <scm>
-    <connection>
-      scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati
-    </connection>
-    <developerConnection>
-      scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati
-    </developerConnection>
-    <tag>HEAD</tag>
-    <url>http://jnati.svn.sourceforge.net/svnroot/jnati</url>
-  </scm>
+    <modules>
+        <module>jnati-core</module>
+        <module>jnati-deploy</module>
+        <module>jnati-proc</module>
+    </modules>
 
-  <developers>
-    <developer>
-      <id>sea36</id>
-      <name>Sam Adams</name>
-      <email>sea36::at::users.sourceforge.net</email>
-      <organization>UCC, Cambridge</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
+    <scm>
+        <connection>scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.2</connection>
+        <developerConnection>scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.2</developerConnection>
+        <url>http://jnati.svn.sourceforge.net/viewvc/jnati/jnati/tags/jnati-0.2</url>
+    </scm>
 
-  <build>
-    <plugins>
+    <developers>
+        <developer>
+            <id>sea36</id>
+            <name>Sam Adams</name>
+            <email>sea36::at::users.sourceforge.net</email>
+            <organization>UCC, Cambridge</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>berlinguyinca</id>
+            <name>Gert Wohlgemuth</name>
+            <email>berlinguyinca@gmail.com</email>
+            <organization>UCD, Davis</organization>
+            <roles>
+                <role>BugFixer</role>
+            </roles>
+        </developer>
+    </developers>
 
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
-        </configuration>
-      </plugin>
-      
-    </plugins>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-  </build>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>net.sf.jnati</groupId>
+                <artifactId>jnati-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.jnati</groupId>
+                <artifactId>jnati-deploy</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>sea36.util</groupId>
+                <artifactId>util-config</artifactId>
+                <version>0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.14</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.5</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-  <repositories>
-    <repository>
-      <id>wwmm</id>
-      <url>http://wwmm.ch.cam.ac.uk/maven2</url>
-    </repository>
-  </repositories>
+    <repositories>
+        <repository>
+            <id>jnati</id>
+            <name>jnati Maven Repository</name>
+            <url>http://jnati.sourceforge.net/m2repo/</url>
+        </repository>
+    </repositories>
 
-  <distributionManagement>
-    <repository>
-      <id>wwmm-dav</id>
-      <url>dav:http://wwmm.ch.cam.ac.uk/maven2</url>
-    </repository>
-  </distributionManagement>
-  
 </project>
