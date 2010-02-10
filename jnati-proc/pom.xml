@@ -4,100 +4,27 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.sf.jnati</groupId>
+        <artifactId>jnati</artifactId>
+        <version>0.2-SNAPSHOT</version>
+    </parent>
 
     <groupId>net.sf.jnati</groupId>
     <artifactId>jnati-proc</artifactId>
-    <version>0.2-SNAPSHOT</version>
-  
-    <name>Java Native Execution Framework</name>
-    <url>http://jnati.sourceforge.net/</url>
-    <description>
-        A framework for distributing, loading and running native code from
-        within java.
-    </description>
 
-    <licenses>
-    <license>
-      <name>GNU Lesser General Public License</name>
-      <url>http://www.gnu.org/licenses/</url>
-    </license>
-  </licenses>
+    <name>Java Native Execution Framework - Process Runner</name>
 
-  <scm>
-    <connection>
-      scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati
-    </connection>
-    <developerConnection>
-      scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati
-    </developerConnection>
-    <tag>HEAD</tag>
-    <url>http://jnati.svn.sourceforge.net/svnroot/jnati</url>
-  </scm>
-
-  <developers>
-    <developer>
-      <id>sea36</id>
-      <name>Sam Adams</name>
-      <email>sea36::at::users.sourceforge.net</email>
-      <organization>UCC, Cambridge</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-
-    <build>
-        <plugins>
-
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
-                </configuration>
-            </plugin>
-      
-        </plugins>
-
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav</artifactId>
-                <version>1.0-beta-2</version>
-            </extension>
-        </extensions>
-
-    </build>
-
-    <dependencies>
-        
+    <dependencies>        
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
-            <version>1.2.14</version>
         </dependency>
-    
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.4</version>
             <scope>test</scope>
         </dependency>
-    
     </dependencies>
     
-    <repositories>
-    <repository>
-      <id>wwmm</id>
-      <url>http://wwmm.ch.cam.ac.uk/maven2</url>
-    </repository>
-  </repositories>
-
-  <distributionManagement>
-    <repository>
-      <id>wwmm-dav</id>
-      <url>dav:http://wwmm.ch.cam.ac.uk/maven2</url>
-    </repository>
-  </distributionManagement>
-  
 </project>

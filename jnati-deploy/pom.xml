@@ -1,110 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
->
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>net.sf.jnati</groupId>
-  <artifactId>jnati-deploy</artifactId>
-  <version>0.2-SNAPSHOT</version>
-  
-  <name>Java Native Execution Framework</name>
-  <url>http://jnati.sourceforge.net/</url>
-  <description>
-    A framework for distributing, loading and running native code from
-    within java.
-  </description>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+        >
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.sf.jnati</groupId>
+        <artifactId>jnati</artifactId>
+        <version>0.2-SNAPSHOT</version>
+    </parent>
 
-  <licenses>
-    <license>
-      <name>GNU Lesser General Public License</name>
-      <url>http://www.gnu.org/licenses/</url>
-    </license>
-  </licenses>
+    <groupId>net.sf.jnati</groupId>
+    <artifactId>jnati-deploy</artifactId>
+    <name>Java Native Execution Framework - Artifact Deployer</name>
 
-  <scm>
-    <connection>
-      scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati
-    </connection>
-    <developerConnection>
-      scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati
-    </developerConnection>
-    <tag>HEAD</tag>
-    <url>http://jnati.svn.sourceforge.net/svnroot/jnati</url>
-  </scm>
-
-  <developers>
-    <developer>
-      <id>sea36</id>
-      <name>Sam Adams</name>
-      <email>sea36::at::users.sourceforge.net</email>
-      <organization>UCC, Cambridge</organization>
-      <roles>
-        <role>Developer</role>
-      </roles>
-    </developer>
-  </developers>
-
-  <build>
-    <plugins>
-
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
-        </configuration>
-      </plugin>
-      
-    </plugins>
-
-  </build>
-
-  <dependencies>
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.14</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.5</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>net.sf.jnati</groupId>
-      <artifactId>jnati-core</artifactId>
-      <version>0.2-SNAPSHOT</version>
-    </dependency>
-  </dependencies>
-
-  <reporting>
-     <plugins>
-
-       <plugin>
-         <artifactId>maven-javadoc-plugin</artifactId>
-         <configuration>
-           <quiet>true</quiet>
-         </configuration>
-       </plugin>
-    </plugins>
-  </reporting>
-  
-  <repositories>
-    <repository>
-      <id>wwmm</id>
-      <url>http://wwmm.ch.cam.ac.uk/maven2</url>
-    </repository>
-  </repositories>
-
-  <distributionManagement>
-    <repository>
-      <id>wwmm-dav</id>
-      <url>dav:http://wwmm.ch.cam.ac.uk/maven2</url>
-    </repository>
-  </distributionManagement>
+    <dependencies>
+        <dependency>
+            <groupId>net.sf.jnati</groupId>
+            <artifactId>jnati-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>
