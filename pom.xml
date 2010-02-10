@@ -4,7 +4,7 @@
 
     <groupId>net.sf.jnati</groupId>
     <artifactId>jnati</artifactId>
-    <version>0.2</version>
+    <version>0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Java Native Execution Framework</name>
@@ -32,9 +32,9 @@
     </modules>
 
     <scm>
-        <connection>scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.2</connection>
-        <developerConnection>scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.2</developerConnection>
-        <url>http://jnati.svn.sourceforge.net/viewvc/jnati/jnati/tags/jnati-0.2</url>
+        <connection>scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati/jnati/trunk/</connection>
+        <developerConnection>scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/jnati/trunk/</developerConnection>
+        <url>http://jnati.svn.sourceforge.net/viewvc/jnati/jnati/trunk/</url>
     </scm>
 
     <developers>
