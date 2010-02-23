@@ -44,6 +44,7 @@ import org.apache.log4j.SimpleLayout;
  * returned, so more specific patterns should be placed before more lax ones.</p>
  * 
  * @author Sam Adams &lt;sea36@users.sourceforge.net&gt;
+ * @deprecated
  */
 public class SystemTool {
 	
