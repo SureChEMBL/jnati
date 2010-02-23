@@ -29,6 +29,7 @@
         <module>jnati-core</module>
         <module>jnati-deploy</module>
         <module>jnati-proc</module>
+        <module>jnati-maven-plugin</module>
     </modules>
 
     <scm>
