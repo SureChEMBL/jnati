@@ -1,7 +1,4 @@
 
-# OS/Architecture string
-jnati.osarch = ${jnati.os}-${jnati.arch}
-
 # Default directory
 jnati.dir = ${user.home}/.jnati
 

@@ -18,22 +18,16 @@
  */
 package net.sf.jnati.deploy.artefact;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import net.sf.jnati.SystemType;
+import net.sf.jnati.SystemTyper;
+import net.sf.jnati.deploy.resolver.ConfigurationException;
+import org.apache.log4j.Logger;
+import sea36.util.config.Configuration;
+
+import java.io.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
-import net.sf.jnati.SystemTool;
-import net.sf.jnati.deploy.resolver.ConfigurationException;
-
-import org.apache.log4j.Logger;
-
-import sea36.util.config.Configuration;
 
 /**
  * <p>Configuration hierarchy:</p>
@@ -70,13 +64,11 @@ public class ConfigManager {
 			if (u1 == null) {
 				throw new FileNotFoundException("Default config file missing: " + DEFAULT_CONFIG_FILE);
 			}
-			
-			String plat = SystemTool.getPlatform();
-			String arch = SystemTool.getArchitecture();
+
+            SystemType systype = SystemTyper.getDefaultInstance().detectPlatform();
 			Map<String,String> params = new HashMap<String,String>();
-			params.put("jnati.os", plat);
-			params.put("jnati.arch", arch);
-			
+			params.put("jnati.osarch", systype.getName());
+
 			defaultConfig = new Configuration(params);
 			LOG.debug("Loading defaults: " + u1);
 			InputStream i1 = u1.openStream();
@@ -129,8 +121,9 @@ public class ConfigManager {
 		Map<String,String> params = new HashMap<String, String>();
 		params.put("jnati.artefactId", id);
 		params.put("jnati.artefactVersion", version);
-		params.put("jnati.os", SystemTool.getPlatform());
-		params.put("jnati.arch", SystemTool.getArchitecture());
+
+        SystemType systype = SystemTyper.getDefaultInstance().detectPlatform();
+        params.put("jnati.osarch", systype.getName());
 		
 		Class<?> cl = ConfigManager.class;
 		URL u1 = cl.getResource(DEFAULT_INSTANCE_CONFIG_FILE);

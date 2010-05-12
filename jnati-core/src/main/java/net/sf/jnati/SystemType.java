@@ -61,7 +61,7 @@ public class SystemType {
 	public String getName() {
 		return name;
 	}
-
+    
 
 	@Override
 	public int hashCode() {
