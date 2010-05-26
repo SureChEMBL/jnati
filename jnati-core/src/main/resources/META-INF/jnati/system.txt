@@ -59,3 +59,8 @@ os.arch = .*86
 SUNOS-AMD64
 os.name = sunos.*
 os.arch = amd64
+
+
+FREEBSD-AMD64
+os.name = freebsd.*
+os.arch = amd64
