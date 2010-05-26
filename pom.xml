@@ -68,6 +68,10 @@
                 </configuration>
             </plugin>
             <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+            <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <configuration>
                     <descriptorRefs>
@@ -137,5 +141,17 @@
             </snapshots>
         </repository>
     </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>jnati-releases</id>
+            <url>file:///home/sea36/sites/jnati/htdocs/m2repo</url>
+        </repository>
+        <snapshotRepository>
+            <id>jnati-snapshots</id>
+            <url>file:///home/sea36/sites/jnati/htdocs/m2-snapshot-repo/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
