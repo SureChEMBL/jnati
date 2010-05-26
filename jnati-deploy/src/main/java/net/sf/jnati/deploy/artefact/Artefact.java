@@ -23,7 +23,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.sf.jnati.ArtefactLocation;
+import net.sf.jnati.ArtefactDescriptor;
 
 import sea36.util.config.Configuration;
 
@@ -140,8 +140,8 @@ public class Artefact {
 		return list;
 	}
 	
-	public ArtefactLocation getArtefactLocation() {
-		return new ArtefactLocation(id, version, getOsArch(), path);
+	public ArtefactDescriptor getArtefactLocation() {
+		return new ArtefactDescriptor(id, version, getOsArch(), path);
 	}
 
 }

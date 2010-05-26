@@ -25,7 +25,7 @@ import java.net.URL;
 import java.util.Collections;
 import java.util.List;
 
-import net.sf.jnati.ArtefactLocation;
+import net.sf.jnati.ArtefactDescriptor;
 import net.sf.jnati.FileUtils;
 import net.sf.jnati.NativeCodeException;
 import net.sf.jnati.deploy.artefact.Artefact;
@@ -147,7 +147,7 @@ public class NativeArtefactLocator {
 	}
 	
 
-	public static ArtefactLocation findArtefact(String id, String version) throws NativeCodeException {
+	public static ArtefactDescriptor findArtefact(String id, String version) throws NativeCodeException {
 		NativeArtefactLocator loc = new NativeArtefactLocator();
 		Artefact artefact = loc.getArtefact(id, version);
     	return artefact.getArtefactLocation();

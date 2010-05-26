@@ -25,7 +25,7 @@ import java.io.File;
  * 
  * @author sea36
  */
-public class ArtefactLocation {
+public class ArtefactDescriptor {
     
 	private final String id;
 	private final String version;
@@ -41,7 +41,7 @@ public class ArtefactLocation {
 	 * @param osarch	- artefact OS/architecture.
 	 * @param root		- directory containing root of artefact.
 	 */
-    public ArtefactLocation(String id, String version, String osarch, File root) {
+    public ArtefactDescriptor(String id, String version, String osarch, File root) {
     	
     	if (id == null) {
     		throw new NullPointerException("Null ID");
