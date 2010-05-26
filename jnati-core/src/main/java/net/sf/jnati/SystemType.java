@@ -27,7 +27,7 @@ public class SystemType {
 	public static final SystemType LINUX_AMD64 = get("LINUX-AMD64");
 
 	public static final SystemType MAC_X86 = get("MAC-X86");
-	public static final SystemType MAX_PPC = get("MAC-PPC");
+	public static final SystemType MAC_PPC = get("MAC-PPC");
 
     public static final SystemType FREEBSD_AMD64 = get("FREEBSD-AMD64");
 
