@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Maven">
+
+    <skin>
+        <groupId>sea36</groupId>
+        <artifactId>sea36-maven-skin</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </skin>
+
+    <body>
+
+        <links>
+            <item name="SF Project Pages" href="http://sourceforge.net/projects/jnati/" />
+        </links>
+
+        <menu name="main">
+            <item name="Home" href="index.html" />
+            <item name="Information" href="project-info.html" />
+            <item name="Reports" href="project-reports.html" />
+        </menu>
+
+        ${reports}
+
+    </body>
+
+    <custom>
+        <!--<googleAnalyticsId>UA-12860052-5</googleAnalyticsId>-->
+        <sourceforge>
+            <projectId>jnati</projectId>
+            <logoId>190741</logoId>
+        </sourceforge>
+        <license>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.html</url>
+            <img>http://www.gnu.org/graphics/lgplv3-147x51.png</img>
+            <alt>GNU Lesser General Public License, v3</alt>
+        </license>
+    </custom>
+
+</project>

@@ -20,7 +20,7 @@ package net.sf.jnati.proc;
 
 import static org.junit.Assert.*;
 
-import java.io.File;
+import java.io.*;
 import java.net.URL;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -31,7 +31,6 @@ import net.sf.jnati.proc.ProcessMonitor.ProcessState;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-
 
 
 public class MonitoredProcessTest {
@@ -61,7 +60,19 @@ public class MonitoredProcessTest {
 		ProcessMonitor c = new ProcessMonitor(command);
 		return c;
 	}
-	
+
+    private ProcessMonitor getEchoCommand() {
+        String[] command = new String[] {
+				"java",
+				"-cp",
+				classpath,
+				"Echo"
+		};
+
+		ProcessMonitor c = new ProcessMonitor(command);
+		return c;
+    }
+    
 	@BeforeClass
 	public static void getClasspath() {
 		ClassLoader cl = MonitoredProcessTest.class.getClassLoader();

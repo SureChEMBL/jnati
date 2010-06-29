@@ -28,7 +28,7 @@ import net.sf.jnati.deploy.artefact.ManifestReader;
 
 public abstract class ArtefactSource {
 	
-	private static final String MANIFEST = "MANIFEST.xml";
+	private static final String MANIFEST_FILE = "MANIFEST.xml";
 	
 	public abstract InputStream openFile(String path) throws IOException;
 	
@@ -38,7 +38,7 @@ public abstract class ArtefactSource {
 
 	public void loadManifest(Artefact artefact) throws IOException {
 		ManifestReader in = new ManifestReader();
-		InputStream is = new BufferedInputStream(openFile(MANIFEST));
+		InputStream is = new BufferedInputStream(openFile(MANIFEST_FILE));
 		in.read(is, artefact);
 	}
 	

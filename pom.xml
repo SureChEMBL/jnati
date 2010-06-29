@@ -7,12 +7,16 @@
     <version>0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>Java Native Execution Framework</name>
+    <name>jnati</name>
     <url>http://jnati.sourceforge.net/</url>
     <description>
-        A framework for distributing, loading and running native code from
-        within java.
+        A toolkit for working with native, non-Java, programs and libraries from within Java.
     </description>
+
+    <organization>
+        <name>Sam Adams</name>
+    </organization>
+    <inceptionYear>2007</inceptionYear>
 
     <licenses>
         <license>
@@ -152,6 +156,62 @@
             <url>file:///home/sea36/sites/jnati/htdocs/m2-snapshot-repo/</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
+        <site>
+            <id>jnati-site</id>
+            <url>http://jnati.sourceforge.net</url>
+        </site>
     </distributionManagement>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.1.2</version>
+                <!--
+                                <reportSets>
+                                  <reportSet>
+                                    <reports>
+                                      <report>summary</report>
+                                      <report>dependencies</report>
+                                      <report>scm</report>
+                                      <report>license</report>
+                                      <report>project-team</report>
+                                      <report>plugins</report>
+                                      <report>cim</report>
+                                      <report>mailing-list</report>
+                                    </reports>
+                                  </reportSet>
+                                </reportSets>
+                -->
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.6.1</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>javadoc</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+                <configuration>
+                    <aggregate>true</aggregate>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <aggregate>true</aggregate>
+                    <inputEncoding>UTF-8</inputEncoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+        </plugins>
+    </reporting>
 
 </project>

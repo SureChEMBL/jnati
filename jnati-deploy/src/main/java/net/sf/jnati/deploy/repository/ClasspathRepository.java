@@ -33,6 +33,7 @@ import net.sf.jnati.deploy.source.ArtefactSource;
 import net.sf.jnati.deploy.source.FileSource;
 import net.sf.jnati.deploy.source.JarSource;
 
+import net.sf.jnati.deploy.source.UrlSource;
 import org.apache.log4j.Logger;
 
 public class ClasspathRepository extends ArtefactRepository {
@@ -43,18 +44,22 @@ public class ClasspathRepository extends ArtefactRepository {
 	private static final String METAINF = "META-INF";
 	private static final String MANIFEST = "MANIFEST.xml";
 	
-	private String getPath(Artefact artefact) {
-		String path = METAINF + FS
-					+ artefact.getId() + FS
-					+ artefact.getVersion() + FS
-					+ artefact.getOsArch() + FS
-					+ MANIFEST;
+	private static String getManifestPath(Artefact artefact) {
+		String path = getArtefactPath(artefact) + MANIFEST;
 		return path;
 	}
-	
-	public List<? extends ArtefactSource> getArtefactSource(Artefact artefact) throws IOException {
+
+    private static String getArtefactPath(Artefact artefact) {
+        String path = METAINF + FS
+					+ artefact.getId() + FS
+					+ artefact.getVersion() + FS
+					+ artefact.getOsArch() + FS;
+        return path;
+    }
+
+    public List<? extends ArtefactSource> getArtefactSource(Artefact artefact) throws IOException {
 		LOG.info("Searching classpath for: " + artefact);
-		String name = getPath(artefact);
+		String name = getManifestPath(artefact);
 		Enumeration<URL> enumeration = getClass().getClassLoader().getResources(name);
 		
 		List<ArtefactSource> list = new ArrayList<ArtefactSource>();
@@ -69,15 +74,21 @@ public class ClasspathRepository extends ArtefactRepository {
 			else if ("jar".equalsIgnoreCase(protocol)) {
 				list.add(getJarSource(url, artefact));
 			}
-			else {
-				LOG.warn("Unsupported protocol: " + protocol);
+            else {
+				LOG.warn("Unknown URL protocol: " + protocol);
+                list.add(getUrlSource(url, artefact, getArtefactPath(artefact)));
 			}
 		}
 		
 		return list;
 	}
 
-	private ArtefactSource getFileSource(URL url, Artefact artefact) {
+    private ArtefactSource getUrlSource(URL url, Artefact artefact, String artefactPath) {
+        UrlSource urlSource = new UrlSource(url, artefact, artefactPath);
+        return urlSource;
+    }
+
+    private ArtefactSource getFileSource(URL url, Artefact artefact) {
 		String u = getString(url);
 		String filename = u.substring(5);
 		File file = new File(filename);
