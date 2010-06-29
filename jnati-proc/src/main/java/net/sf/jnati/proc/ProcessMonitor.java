@@ -276,7 +276,7 @@ public class ProcessMonitor {
      * will be directed.  If this is set to null, then the output of the
      * process will be discarded.</p>
      * 
-     * @param stdout
+     * @param stderr
      * @throws	IllegalStateException
      * 			If the process has been started
      */
@@ -371,7 +371,7 @@ public class ProcessMonitor {
      * @throws InterruptedException     If this thread was interrupted before
      *                                  the process had finished.
      * @throws TimeoutException 
-     * @throws ProcessRunnerException   If the process failed. This exception
+     * @throws ExecutionException       If the process failed. This exception
      *                                  contains the output up to the point of
      *                                  failure, and the cause of failure.
      */
@@ -393,7 +393,7 @@ public class ProcessMonitor {
      * @throws InterruptedException     If this thread was interrupted before
      *                                  the process had finished.
      * @throws TimeoutException 
-     * @throws ProcessRunnerException   If the process failed. This exception
+     * @throws ExecutionException       If the process failed. This exception
      *                                  contains the output up to the point of
      *                                  failure, and the cause of failure.
      */
