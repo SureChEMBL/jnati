@@ -4,7 +4,7 @@
 
     <groupId>net.sf.jnati</groupId>
     <artifactId>jnati</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.3</version>
     <packaging>pom</packaging>
 
     <name>jnati</name>
@@ -37,9 +37,9 @@
     </modules>
 
     <scm>
-        <connection>scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati/jnati/trunk/</connection>
-        <developerConnection>scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/jnati/trunk/</developerConnection>
-        <url>http://jnati.svn.sourceforge.net/viewvc/jnati/jnati/trunk/</url>
+        <connection>scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.3</connection>
+        <developerConnection>scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.3</developerConnection>
+        <url>http://jnati.svn.sourceforge.net/viewvc/jnati/jnati/tags/jnati-0.3</url>
     </scm>
 
     <developers>
