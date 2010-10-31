@@ -155,7 +155,6 @@
         </repository>
     </repositories>
 
-<!--
     <distributionManagement>
         <repository>
             <id>jnati-releases</id>
@@ -171,23 +170,7 @@
             <url>http://jnati.sourceforge.net</url>
         </site>
     </distributionManagement>
--->
-    <distributionManagement>
-        <repository>
-            <id>jnati-releases</id>
-            <url>file:///home/sea36/sites/jnati/htdocs/m2repo</url>
-        </repository>
-        <snapshotRepository>
-            <id>jnati-snapshots</id>
-            <url>scp://shell.sourceforge.net/home/groups/j/jn/jnati/htdocs/m2-snapshot-repo/</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-        <site>
-            <id>jnati-site</id>
-            <url>http://jnati.sourceforge.net</url>
-        </site>
-    </distributionManagement>
-
+    
     <reporting>
         <plugins>
             <plugin>
