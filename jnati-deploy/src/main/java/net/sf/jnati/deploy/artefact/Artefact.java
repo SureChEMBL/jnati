@@ -24,8 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.sf.jnati.ArtefactDescriptor;
-
-import sea36.util.config.Configuration;
+import net.sf.jnati.config.Configuration;
 
 public class Artefact {
 

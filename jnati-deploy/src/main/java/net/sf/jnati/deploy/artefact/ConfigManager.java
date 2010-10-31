@@ -20,9 +20,9 @@ package net.sf.jnati.deploy.artefact;
 
 import net.sf.jnati.SystemType;
 import net.sf.jnati.SystemTyper;
+import net.sf.jnati.config.Configuration;
 import net.sf.jnati.deploy.resolver.ConfigurationException;
 import org.apache.log4j.Logger;
-import sea36.util.config.Configuration;
 
 import java.io.*;
 import java.net.URL;

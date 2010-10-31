@@ -113,11 +113,6 @@
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>sea36.util</groupId>
-                <artifactId>util-config</artifactId>
-                <version>0.1</version>
-            </dependency>
-            <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
                 <version>1.2.14</version>
@@ -170,7 +165,7 @@
             <url>http://jnati.sourceforge.net</url>
         </site>
     </distributionManagement>
-    
+
     <reporting>
         <plugins>
             <plugin>
