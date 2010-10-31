@@ -17,6 +17,10 @@
 # MacOS definition names MUST start MAC-
 #
 
+WINDOWS-AMD64
+os.name = windows.*
+os.arch = amd64
+
 WINDOWS-X86_64
 os.name = windows.*
 os.arch = x86_64

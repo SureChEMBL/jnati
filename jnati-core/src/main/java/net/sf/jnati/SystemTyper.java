@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Collections;
 import java.util.Enumeration;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.regex.Pattern;
 
 /**
@@ -136,9 +138,20 @@ public class SystemTyper {
         return null;
     }
 
+    private static void debug() {
+        System.err.println("Properties:");
+        for (Map.Entry<?,?> e : new TreeMap<Object,Object>(System.getProperties()).entrySet()) {
+            System.err.println("  "+e.getKey()+": "+e.getValue());
+        }
+    }
 
     public static void main(String[] args) throws IOException {
-        System.out.println(getDefaultInstance().detectPlatform().getName());
+        if (args.length == 1 && "-debug".equals(args[0])) {
+            debug();
+        } else {
+            System.out.println(getDefaultInstance().detectPlatform().getName());
+        }
     }
+
 
 }
