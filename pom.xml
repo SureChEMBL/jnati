@@ -66,9 +66,18 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.1</version>
                 <configuration>
                     <source>1.5</source>
                     <target>1.5</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -134,7 +143,7 @@
             </snapshots>
         </repository>
         <repository>
-            <id>jnati</id>
+            <id>jnati-snapshots</id>
             <name>jnati Maven Repository</name>
             <url>http://jnati.sourceforge.net/m2-snapshot-repo/</url>
             <releases>
@@ -146,6 +155,7 @@
         </repository>
     </repositories>
 
+<!--
     <distributionManagement>
         <repository>
             <id>jnati-releases</id>
@@ -154,6 +164,22 @@
         <snapshotRepository>
             <id>jnati-snapshots</id>
             <url>file:///home/sea36/sites/jnati/htdocs/m2-snapshot-repo/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+        <site>
+            <id>jnati-site</id>
+            <url>http://jnati.sourceforge.net</url>
+        </site>
+    </distributionManagement>
+-->
+    <distributionManagement>
+        <repository>
+            <id>jnati-releases</id>
+            <url>file:///home/sea36/sites/jnati/htdocs/m2repo</url>
+        </repository>
+        <snapshotRepository>
+            <id>jnati-snapshots</id>
+            <url>scp://shell.sourceforge.net/home/groups/j/jn/jnati/htdocs/m2-snapshot-repo/</url>
             <uniqueVersion>false</uniqueVersion>
         </snapshotRepository>
         <site>
