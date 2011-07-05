@@ -40,7 +40,7 @@ public class NativeLibraryLoader {
 		for (ArtefactFile mr : artefact.getFileList()) {
 			if (mr.isLibrary()) {
 				File file = new File(root, mr.getPath());
-				String path = file.getPath();
+				String path = file.getAbsolutePath();
 				if (LOG.isDebugEnabled()) {
 					LOG.debug("Loading library: " + path);
 				}
