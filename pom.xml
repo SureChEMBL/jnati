@@ -92,16 +92,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>net.sf.jnati.SystemTyper</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
+                <version>2.2.1</version>
             </plugin>
         </plugins>
     </build>
