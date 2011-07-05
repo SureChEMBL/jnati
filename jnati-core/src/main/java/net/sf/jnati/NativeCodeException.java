@@ -16,6 +16,9 @@
  */
 package net.sf.jnati;
 
+/**
+ * @author Sam Adams
+ */
 public class NativeCodeException extends Exception {
 
     private static final long serialVersionUID = 1L;

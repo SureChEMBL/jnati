@@ -29,6 +29,9 @@ import net.sf.jnati.deploy.artefact.Artefact;
 
 import org.apache.log4j.Logger;
 
+/**
+ * @author Sam Adams
+ */
 public class JarSource extends ArtefactSource {
 	
 	private static final Logger LOG = Logger.getLogger(JarSource.class);

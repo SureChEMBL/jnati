@@ -24,6 +24,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Reader;
 
+/**
+ * @author Sam Adams
+ */
 public class FileUtils {
 
     private static final int BUFFER_SIZE = 4096;

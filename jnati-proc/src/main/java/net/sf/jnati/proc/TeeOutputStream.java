@@ -19,6 +19,9 @@ package net.sf.jnati.proc;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * @author Sam Adams
+ */
 public class TeeOutputStream extends OutputStream {
 	
 	private final OutputStream[] streams;

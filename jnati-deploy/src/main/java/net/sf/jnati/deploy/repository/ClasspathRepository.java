@@ -34,6 +34,9 @@ import net.sf.jnati.deploy.source.JarSource;
 import net.sf.jnati.deploy.source.UrlSource;
 import org.apache.log4j.Logger;
 
+/**
+ * @author Sam Adams
+ */
 public class ClasspathRepository extends ArtefactRepository {
 
 	private static final Logger LOG = Logger.getLogger(ClasspathRepository.class);

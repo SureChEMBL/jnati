@@ -24,7 +24,9 @@ import net.sf.jnati.deploy.artefact.ArtefactFile;
 
 import org.apache.log4j.Logger;
 
-
+/**
+ * @author Sam Adams
+ */
 public class NativeLibraryLoader {
 	
 	private static final Logger LOG = Logger.getLogger(NativeLibraryLoader.class);

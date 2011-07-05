@@ -26,6 +26,9 @@ import java.io.InputStream;
 import net.sf.jnati.deploy.artefact.Artefact;
 import net.sf.jnati.deploy.artefact.ManifestReader;
 
+/**
+ * @author Sam Adams
+ */
 public abstract class ArtefactSource {
 	
 	private static final String MANIFEST_FILE = "MANIFEST.xml";

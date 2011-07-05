@@ -16,6 +16,9 @@
  */
 package net.sf.jnati.proc;
 
+/**
+ * @author Sam Adams
+ */
 public class ProcessOutput {
 
 	private byte[] output;

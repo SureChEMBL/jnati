@@ -18,6 +18,9 @@ package net.sf.jnati.deploy.resolver;
 
 import net.sf.jnati.NativeCodeException;
 
+/**
+ * @author Sam Adams
+ */
 public class ConfigurationException extends NativeCodeException {
 
 	private static final long serialVersionUID = 1L;

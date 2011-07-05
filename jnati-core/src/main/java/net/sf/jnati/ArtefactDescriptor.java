@@ -21,7 +21,7 @@ import java.io.File;
 /**
  * Describes the location of an artefact.
  * 
- * @author sea36
+ * @author Sam Adams
  */
 public class ArtefactDescriptor {
     

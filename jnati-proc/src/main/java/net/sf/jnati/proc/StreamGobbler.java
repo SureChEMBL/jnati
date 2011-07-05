@@ -25,7 +25,7 @@ import org.apache.log4j.Logger;
 
 /**
  * Class that gobbles content from (optionally saving it) an input stream.
- * @author sea36
+ * @author Sam Adams
  *
  */
 public class StreamGobbler extends Thread {

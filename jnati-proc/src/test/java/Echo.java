@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 /**
- * @author sea36
+ * @author Sam Adams
  */
 public class Echo {
 

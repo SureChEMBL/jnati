@@ -32,6 +32,9 @@ import net.sf.jnati.deploy.artefact.Artefact;
 import net.sf.jnati.deploy.source.ArtefactSource;
 import net.sf.jnati.deploy.source.TempJarSource;
 
+/**
+ * @author Sam Adams
+ */
 public class RemoteRepository extends ArtefactRepository {
 	
 	private static final Logger LOG = Logger.getLogger(RemoteRepository.class);

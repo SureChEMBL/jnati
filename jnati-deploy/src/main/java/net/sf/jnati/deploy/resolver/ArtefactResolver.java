@@ -28,6 +28,9 @@ import net.sf.jnati.deploy.source.ArtefactSource;
 
 import org.apache.log4j.Logger;
 
+/**
+ * @author Sam Adams
+ */
 public class ArtefactResolver {
 
 	private static final Logger LOG = Logger.getLogger(ArtefactResolver.class);

@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.Properties;
 
 /**
- * @author sea36
+ * @author Sam Adams
  * @goal detect
  */
 public class JnatiMavenPlugin extends AbstractMojo {

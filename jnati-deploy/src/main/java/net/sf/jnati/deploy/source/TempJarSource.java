@@ -23,6 +23,9 @@ import java.io.IOException;
 
 import net.sf.jnati.deploy.artefact.Artefact;
 
+/**
+ * @author Sam Adams
+ */
 public class TempJarSource extends JarSource {
 
 	private File file;

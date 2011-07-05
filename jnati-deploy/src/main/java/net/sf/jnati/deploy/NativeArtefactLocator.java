@@ -37,6 +37,9 @@ import net.sf.jnati.deploy.source.ArtefactSource;
 
 import org.apache.log4j.Logger;
 
+/**
+ * @author Sam Adams
+ */
 public class NativeArtefactLocator {
 	
 	private static final Logger LOG = Logger.getLogger(NativeArtefactLocator.class);

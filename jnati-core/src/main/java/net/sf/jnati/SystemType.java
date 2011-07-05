@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author sea36
+ * @author Sam Adams
  */
 public class SystemType {
 

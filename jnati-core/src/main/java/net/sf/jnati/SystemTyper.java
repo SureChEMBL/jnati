@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
  * 32bit (eg X86) vs 64bit (eg X86_64) is on the basis of
  * the current JVM, not the underlying operating system.
  *
- * @author sea36
+ * @author Sam Adams
  */
 public class SystemTyper {
 

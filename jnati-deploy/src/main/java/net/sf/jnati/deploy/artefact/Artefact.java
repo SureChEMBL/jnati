@@ -24,6 +24,9 @@ import java.util.List;
 import net.sf.jnati.ArtefactDescriptor;
 import net.sf.jnati.config.Configuration;
 
+/**
+ * @author Sam Adams
+ */
 public class Artefact {
 
 	private String id;

@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.net.URL;
 
 /**
- * @author sea36
+ * @author Sam Adams
  */
 public class UrlSource extends ArtefactSource {
 

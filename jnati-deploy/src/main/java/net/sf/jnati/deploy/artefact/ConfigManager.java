@@ -36,7 +36,7 @@ import java.util.Map;
  * <tr><td>global properties file [ ${jnati.settingsFile} ]</td></tr>
  * <tr><td>instance defaults</td></tr>
  * <tr><td>global defaults</td></tr>
- * @author sea36
+ * @author Sam Adams
  *
  */
 public class ConfigManager {

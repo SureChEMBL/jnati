@@ -48,7 +48,8 @@ import org.apache.log4j.Logger;
  * proc.setErrorStream(System.err);
  * proc.execsute();
  * </pre>
- * @author Sam Adams &lt;sea36 at users.sourceforge.net&gt;
+ *
+ * @author Sam Adams
  */
 public class ProcessMonitor {
 

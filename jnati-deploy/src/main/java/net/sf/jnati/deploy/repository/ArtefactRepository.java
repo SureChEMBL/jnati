@@ -22,6 +22,9 @@ import java.util.List;
 import net.sf.jnati.deploy.artefact.Artefact;
 import net.sf.jnati.deploy.source.ArtefactSource;
 
+/**
+ * @author Sam Adams
+ */
 public abstract class ArtefactRepository {
 	
 	public abstract List<? extends ArtefactSource> getArtefactSource(Artefact artefact) throws IOException;

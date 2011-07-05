@@ -26,6 +26,9 @@ import java.io.InputStream;
 
 import net.sf.jnati.deploy.artefact.Artefact;
 
+/**
+ * @author Sam Adams
+ */
 public class FileSource extends ArtefactSource {
 
 	private File root;

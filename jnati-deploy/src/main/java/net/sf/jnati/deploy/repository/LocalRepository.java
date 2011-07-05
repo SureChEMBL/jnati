@@ -27,6 +27,9 @@ import net.sf.jnati.deploy.source.FileSource;
 
 import org.apache.log4j.Logger;
 
+/**
+ * @author Sam Adams
+ */
 public class LocalRepository extends ArtefactRepository {
 	
 	private static final Logger LOG = Logger.getLogger(LocalRepository.class);

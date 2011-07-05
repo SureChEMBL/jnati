@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Sam Adams
+ */
 public class TeeStreamException extends IOException {
 
     private static final long serialVersionUID = 1L;

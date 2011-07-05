@@ -16,7 +16,9 @@
  */
 package net.sf.jnati.deploy.artefact;
 
-
+/**
+ * @author Sam Adams
+ */
 public class ArtefactFile {
 
 	private String path;

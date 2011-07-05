@@ -32,6 +32,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+/**
+ * @author Sam Adams
+ */
 public class ManifestReader {
 
 	private static final Logger LOG = Logger.getLogger(ManifestReader.class);

@@ -26,7 +26,7 @@ import java.util.Properties;
  * Values ${name} are substituted with either parameters specified on
  * construction, or other properties. Parameters can also be included in
  * property names, but other properties cannot.
- * @author sea36
+ * @author Sam Adams
  *
  */
 public class ResolvingProperties extends Properties {
