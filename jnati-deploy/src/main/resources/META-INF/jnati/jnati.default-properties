@@ -8,14 +8,12 @@ jnati.settingsFile = ${jnati.dir}/jnati.properties
 # Local repository location
 jnati.localRepository = ${jnati.dir}/repo
 
-# Repository layouts
-# jnati.localRepositoryLayout = ${jnati.artefactId}/${jnati.artefactVersion}/${jnati.osarch}
-# jnati.classpathRepositoryLayout = META-INF/${jnati.artefactId}/${jnati.artefactVersion}/${jnati.osarch}
-# jnati.remoteRepositoryPath = ${jnati.artefactId}/${jnati.artefactVersion}/${jnati.artefactId}-${jnati.artefactVersion}-${jnati.osarch}.jar
-
-
 # auto-deploy artefacts
 jnati.autoDeploy = true
+
+# multideploy settings (e.g. for alternative classloaders)
+jnati.enableMultideploy = false
+jnati.maxMultideployCount = 10
 
 # allow direct loading of local artefacts (not in repository)
 jnati.allowDirectLoad = true

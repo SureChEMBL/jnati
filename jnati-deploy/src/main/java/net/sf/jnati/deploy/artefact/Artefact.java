@@ -117,6 +117,16 @@ public class Artefact {
 		String s = getProperty("jnati.autoDeploy");
 		return Boolean.parseBoolean(s);
 	}
+
+    public boolean isMultideployEnabled() {
+        String s = getProperty("${jnati.artefactId}.enableMultideploy");
+        return Boolean.parseBoolean(s);
+    }
+
+    public int getMaxMultideployCount() {
+        String s = getProperty("${jnati.artefactId}.maxMultideployCount");
+        return Integer.parseInt(s);
+    }
 	
 	public boolean getAllowLocal() {
 		String s = getProperty("jnati.allowDirectLoad");
