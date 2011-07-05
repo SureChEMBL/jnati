@@ -28,7 +28,7 @@ import java.util.Map;
  * .properties file) or set (from a Map), while runtime properties are
  * retrieved from System.getProperties().
  *
- * @author Sam Adams <sea36 at users.sourceforge.net>
+ * @author Sam Adams
  */
 public class Configuration {
 
