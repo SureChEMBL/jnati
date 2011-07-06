@@ -38,7 +38,7 @@ public class NativeLibraryLoader {
     }
 
     public static Artefact loadLibrary(String id, String version, Properties configuration) throws NativeCodeException {
-        return loadLibrary(id, version, null, null);
+        return loadLibrary(id, version, configuration, null);
     }
 
     public static Artefact loadLibrary(String id, String version, Properties configuration, LibraryLoader loader) throws NativeCodeException {
