@@ -52,8 +52,14 @@ public class Artefact {
 		this.id = id;
 		this.version = version;
 	}
-	
-	public String getId() {
+
+    public Artefact(Artefact artefact) {
+        this.id = artefact.getId();
+        this.version = artefact.getVersion();
+        this.config = artefact.getConfiguration();
+    }
+
+    public String getId() {
 		return id;
 	}
 	
