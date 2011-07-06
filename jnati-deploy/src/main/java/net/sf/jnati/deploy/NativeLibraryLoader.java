@@ -18,6 +18,7 @@ package net.sf.jnati.deploy;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Properties;
 
 import net.sf.jnati.NativeCodeException;
 import net.sf.jnati.deploy.artefact.Artefact;
@@ -32,36 +33,50 @@ public class NativeLibraryLoader {
 
     private static final Logger LOG = Logger.getLogger(NativeLibraryLoader.class);
 
-    public static void loadLibrary(String id, String version) throws NativeCodeException {
+    public static Artefact loadLibrary(String id, String version) throws NativeCodeException {
+        return loadLibrary(id, version, null);
+    }
+
+    public static Artefact loadLibrary(String id, String version, Properties configuration) throws NativeCodeException {
+        return loadLibrary(id, version, null, null);
+    }
+
+    public static Artefact loadLibrary(String id, String version, Properties configuration, LibraryLoader loader) throws NativeCodeException {
 
         NativeArtefactLocator locator = new NativeArtefactLocator();
-        Artefact artefact = locator.getArtefact(id, version);
+        Artefact artefact = locator.getArtefact(id, version, configuration);
 
         int redeploy = 0;
         Artefact current = artefact;
         while (redeploy < 1000) {   // Hard limit to prevent infinite loops!
             try {
                 if (current != null) {
-                    loadLibrary(current);
+                    loadLibrary(current, loader);
+                    return current;
                 }
-                break;
-            } catch (NativeCodeException e) {
-                if (artefact.isMultideployEnabled()) {
-                    if (artefact.getMaxMultideployCount() > 0 && redeploy >= artefact.getMaxMultideployCount()) {
-                        throw new NativeCodeException("Unable to load native code - max deploy count reached ("+redeploy+")", e);
+            } catch (UnsatisfiedLinkError e) {
+                if (e.getMessage().endsWith("already loaded in another classloader")) {
+                    LOG.info("Multideploy enabled: "+artefact.isMultideployEnabled());
+                    if (artefact.isMultideployEnabled()) {
+                        if (artefact.getMaxMultideployCount() > 0 && redeploy >= artefact.getMaxMultideployCount()) {
+                            throw new NativeCodeException("Unable to load native code - max deploy count reached ("+redeploy+")", e);
+                        }
+                        redeploy++;
+                        try {
+                            current = locator.redeployArtefact(artefact, redeploy);
+                        } catch (Exception ex) {
+                        }
+                        continue;
                     }
                 }
-                redeploy++;
-                try {
-                    current = locator.redeployArtefact(artefact, redeploy);
-                } catch (Exception ex) {
-                    continue;
-                }
+                throw e;
             }
         }
+
+        throw new NativeCodeException("Unable to load native code - deploy count limit reached");
     }
 
-    private static void loadLibrary(Artefact artefact) throws NativeCodeException {
+    private static void loadLibrary(Artefact artefact, LibraryLoader loader) throws NativeCodeException {
         File root = artefact.getPath();
 
         for (ArtefactFile resource : artefact.getFileList()) {
@@ -71,10 +86,10 @@ public class NativeLibraryLoader {
                 if (LOG.isDebugEnabled()) {
                     LOG.debug("Loading library: " + path);
                 }
-                try {
+                if (loader == null) {
                     System.load(path);
-                } catch (UnsatisfiedLinkError e) {
-                    throw new NativeCodeException("Error loading native library: " + path, e);
+                } else {
+                    loader.loadLibrary(path);
                 }
             }
         }

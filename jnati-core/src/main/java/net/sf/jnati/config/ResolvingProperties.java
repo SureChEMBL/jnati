@@ -191,8 +191,9 @@ public class ResolvingProperties extends Properties {
     				key = newkey;
     				i0 = key.indexOf("${", i0);
     			} else {
-    				LOG.warn("Unknown parameter: " + k);
+                    LOG.warn("Unknown parameter: " + k);
         			i0 = key.indexOf("${", i0+1);
+                    throw new RuntimeException();
         		}
     		} else {
     			i0 = key.indexOf("${", i0+1);

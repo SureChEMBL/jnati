@@ -12,5 +12,5 @@ ${jnati.artefactId}.${jnati.artefactVersion}.settingsFile = ${jnati.dir}/${jnati
 ${jnati.artefactId}.repositoryUrls = ${jnati.repositoryUrls}
 ${jnati.artefactId}.${jnati.artefactVersion}.repositoryUrls = ${${jnati.artefactId}.repositoryUrls}
 
-${jnati.artifactId}.enableMultideploy = ${jnati.enableMultideploy}
-${jnati.artifactId}.maxMultideployCount = ${jnati.maxMultideployCount}
+${jnati.artefactId}.enableMultideploy = ${jnati.enableMultideploy}
+${jnati.artefactId}.maxMultideployCount = ${jnati.maxMultideployCount}

@@ -35,6 +35,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 import java.util.List;
+import java.util.Properties;
 
 /**
  * @author Sam Adams
@@ -43,11 +44,15 @@ public class NativeArtefactLocator {
 	
 	private static final Logger LOG = Logger.getLogger(NativeArtefactLocator.class);
 
-	public Artefact getArtefact(String id, String version) throws NativeCodeException {
+    public Artefact getArtefact(String id, String version) throws NativeCodeException {
+        return getArtefact(id, version, null);
+    }
+
+	public Artefact getArtefact(String id, String version, Properties configuration) throws NativeCodeException {
 		
 		Artefact artefact = new Artefact(id, version);
-		ConfigManager.loadConfiguration(artefact);
-		
+		ConfigManager.loadConfiguration(artefact, configuration);
+
 		// Search classpath
         List<? extends ArtefactSource> classpathSources = findClasspathSources(artefact);
 		

@@ -26,6 +26,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * <p>Configuration hierarchy:</p>
@@ -110,7 +111,7 @@ public class ConfigManager {
 	
 	
 
-	public static Configuration getConfig(String id, String version) throws IOException {
+	public static Configuration getConfig(String id, String version, Properties configuration) throws IOException {
 
 		Configuration defaultConfig = getDefaultConfig();
 		
@@ -129,7 +130,7 @@ public class ConfigManager {
 			throw new FileNotFoundException("Default config file missing: " + DEFAULT_INSTANCE_CONFIG_FILE);
 		}
 		
-		Configuration config = new Configuration(defaultConfig, params);
+		Configuration config = new Configuration(defaultConfig, params, configuration);
 		InputStream i1 = u1.openStream();
 		LOG.debug("Loading instance defaults: " + u1);
 		try {
@@ -171,10 +172,10 @@ public class ConfigManager {
 
 
 
-	public static void loadConfiguration(Artefact artefact) throws ConfigurationException {
+	public static void loadConfiguration(Artefact artefact, Properties configuration) throws ConfigurationException {
 		
 		try {
-			Configuration config = getConfig(artefact.getId(), artefact.getVersion());
+			Configuration config = getConfig(artefact.getId(), artefact.getVersion(), configuration);
 			artefact.setConfiguration(config);
 		} catch (IOException e) {
 			throw new ConfigurationException("Error loading configuration", e);
