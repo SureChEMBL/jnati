@@ -9,7 +9,7 @@
 
     <groupId>net.sf.jnati</groupId>
     <artifactId>jnati-deploy</artifactId>
-    <name>Java Native Execution Framework - Artifact Deployer</name>
+    <name>jnati - Artifact Deployer</name>
 
     <dependencies>
         <dependency>

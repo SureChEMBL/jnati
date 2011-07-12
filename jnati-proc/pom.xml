@@ -11,7 +11,7 @@
     <groupId>net.sf.jnati</groupId>
     <artifactId>jnati-proc</artifactId>
 
-    <name>Java Native Execution Framework - Process Runner</name>
+    <name>jnati - Process Runner</name>
 
     <dependencies>
         <dependency>
