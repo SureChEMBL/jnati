@@ -1,0 +1,6 @@
+
+CFLAGS += -m64 -I$(JAVA_HOME)/include/solaris -fPIC
+LDFLAGS += -shared
+
+LIB_PREFIX = lib
+LIB_SUFFIX = .so

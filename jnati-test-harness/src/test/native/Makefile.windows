@@ -1,0 +1,6 @@
+
+CFLAGS += -I"$(JAVA_HOME)/include/win32"
+LDFLAGS += -Wl,--add-stdcall-alias -shared
+
+LIB_PREFIX =  
+LIB_SUFFIX = .dll

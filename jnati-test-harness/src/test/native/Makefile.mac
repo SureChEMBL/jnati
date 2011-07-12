@@ -1,0 +1,5 @@
+
+LDFLAGS = -dynamiclib -single_module
+CFLAGS += -I"${JAVA_HOME}/include" -I$(SRC_DIR) -arch i386 -arch x86_64
+
+LIB_SUFFIX=.dynlib
