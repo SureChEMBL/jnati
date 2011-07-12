@@ -224,8 +224,12 @@ public class NativeArtefactLocator {
     }
 
 	public static ArtefactDescriptor findArtefact(String id, String version) throws NativeCodeException {
+		return findArtefact(id, version, null);
+    }
+
+    public static ArtefactDescriptor findArtefact(String id, String version, Properties configuration) throws NativeCodeException {
 		NativeArtefactLocator loc = new NativeArtefactLocator();
-		Artefact artefact = loc.getArtefact(id, version);
+		Artefact artefact = loc.getArtefact(id, version, configuration);
     	return artefact.getArtefactLocation();
     }
 
