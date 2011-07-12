@@ -12,7 +12,6 @@ jnati.localRepository = ${jnati.dir}/repo
 jnati.autoDeploy = true
 
 # multideploy settings (e.g. for alternative classloaders)
-jnati.enableMultideploy = false
 jnati.maxMultideployCount = 10
 
 # allow direct loading of local artefacts (not in repository)

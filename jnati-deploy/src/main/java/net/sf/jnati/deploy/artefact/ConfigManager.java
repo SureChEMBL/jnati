@@ -139,7 +139,7 @@ public class ConfigManager {
 			i1.close();
 		}
 		
-		String s1 = "${jnati.artefactId}.settingsFile";
+		String s1 = "jnati.settingsFile.${jnati.artefactId}";
 		String fn1 = config.getProperty(s1);
 		if (fn1 == null) {
 			throw new IOException(s1 + " not defined");

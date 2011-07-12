@@ -1,16 +1,19 @@
 
 # OS/Arch.
-${jnati.artefactId}.osarch = ${jnati.osarch}
-${jnati.artefactId}.${jnati.artefactVersion}.osarch = ${${jnati.artefactId}.osarch}
+jnati.osarch.${jnati.artefactId} = ${jnati.osarch}
+jnati.osarch.${jnati.artefactId}.${jnati.artefactVersion} = ${jnati.osarch.${jnati.artefactId}}
 
 # Configuration files
-${jnati.artefactId}.settingsFile = ${jnati.dir}/${jnati.artefactId}.properties
-${jnati.artefactId}.${jnati.artefactVersion}.settingsFile = ${jnati.dir}/${jnati.artefactId}.${jnati.artefactVersion}.properties
+jnati.settingsFile.${jnati.artefactId} = ${jnati.dir}/${jnati.artefactId}.properties
+jnati.settingsFile.${jnati.artefactId}.${jnati.artefactVersion} = ${jnati.dir}/${jnati.artefactId}.${jnati.artefactVersion}.properties
 
 # download locations, separated by semicolons. Actual semicolons in URLs should
 # be written '%3B'
-${jnati.artefactId}.repositoryUrls = ${jnati.repositoryUrls}
-${jnati.artefactId}.${jnati.artefactVersion}.repositoryUrls = ${${jnati.artefactId}.repositoryUrls}
+jnati.repositoryUrls.${jnati.artefactId} = ${jnati.repositoryUrls}
+jnati.repositoryUrls.${jnati.artefactId}.${jnati.artefactVersion} = ${jnati.repositoryUrls.${jnati.artefactId}}
 
-${jnati.artefactId}.enableMultideploy = ${jnati.enableMultideploy}
-${jnati.artefactId}.maxMultideployCount = ${jnati.maxMultideployCount}
+jnati.enableMultideploy.${jnati.artefactId} = false
+jnati.enableMultideploy.${jnati.artefactId}.${jnati.artefactVersion} = ${jnati.enableMultideploy.${jnati.artefactId}}
+
+jnati.maxMultideployCount.${jnati.artefactId} = ${jnati.maxMultideployCount}
+jnati.maxMultideployCount.${jnati.artefactId}.${jnati.artefactVersion} = ${jnati.maxMultideployCount.${jnati.artefactId}}

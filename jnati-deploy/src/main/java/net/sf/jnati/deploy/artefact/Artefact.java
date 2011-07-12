@@ -110,7 +110,7 @@ public class Artefact {
 	
 	
 	public String getOsArch() {
-		return getProperty("${jnati.artefactId}.${jnati.artefactVersion}.osarch");
+		return getProperty("jnati.osarch.${jnati.artefactId}.${jnati.artefactVersion}");
 	}
 	
 	public File getLocalRepository() {
@@ -125,12 +125,12 @@ public class Artefact {
 	}
 
     public boolean isMultideployEnabled() {
-        String s = getProperty("${jnati.artefactId}.enableMultideploy");
+        String s = getProperty("jnati.enableMultideploy.${jnati.artefactId}.${jnati.artefactVersion}");
         return Boolean.parseBoolean(s);
     }
 
     public int getMaxMultideployCount() {
-        String s = getProperty("${jnati.artefactId}.maxMultideployCount");
+        String s = getProperty("jnati.maxMultideployCount.${jnati.artefactId}.${jnati.artefactVersion}");
         return Integer.parseInt(s);
     }
 	
@@ -145,7 +145,7 @@ public class Artefact {
 	}
 	
 	public List<String> getRepositoryUrls() {
-		String s = getProperty("${jnati.artefactId}.${jnati.artefactVersion}.repositoryUrls");
+		String s = getProperty("jnati.repositoryUrls.${jnati.artefactId}.${jnati.artefactVersion}");
 		List<String> list = new ArrayList<String>();
 		for (String u : s.split(";")) {
 			u = u.trim();
