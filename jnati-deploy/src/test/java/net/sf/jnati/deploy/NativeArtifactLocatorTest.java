@@ -40,8 +40,8 @@ public class NativeArtifactLocatorTest {
 		
 		try {
 			System.setProperty("jnati.localRepository", tmpdir.getPath());
-			System.setProperty("test-download.1.0.osarch", "NOOS-NOARCH");
-			System.setProperty("test-download.1.0.repositoryUrls", "http://jnati.sourceforge.net/jnati-testrepo");
+			System.setProperty("jnati.osarch.test-download.1.0", "NOOS-NOARCH");
+			System.setProperty("jnati.repositoryUrls.test-download.1.0", "http://jnati.sourceforge.net/jnati-testrepo");
 			ArtefactDescriptor loc = NativeArtefactLocator.findArtefact("test-download", "1.0");
 			
 			File dir = new File(tmpdir, "test-download/1.0/NOOS-NOARCH");
@@ -62,8 +62,8 @@ public class NativeArtifactLocatorTest {
 		
 		try {
 			System.setProperty("jnati.localRepository", tmpdir.getAbsolutePath());
-			System.setProperty("test-locate.1.0.osarch", "NOOS-NOARCH");
-			System.setProperty("test-locate.1.0.repositoryUrls", "false");
+			System.setProperty("jnati.osarch.test-locate.1.0", "NOOS-NOARCH");
+			System.setProperty("jnati.repositoryUrls.test-locate.1.0", "false");
 			ArtefactDescriptor loc = NativeArtefactLocator.findArtefact("test-locate", "1.0");
 			
 			File target = new File("target/test-classes/META-INF/test-locate/1.0/NOOS-NOARCH").getAbsoluteFile();
@@ -83,7 +83,7 @@ public class NativeArtifactLocatorTest {
 		
 		try {
 			System.setProperty("jnati.localRepository", tmpdir.getPath());
-			System.setProperty("test-deploy.1.0.osarch", "NOOS-NOARCH");
+			System.setProperty("jnati.osarch.test-deploy.1.0", "NOOS-NOARCH");
 			System.setProperty("jnati.allowDownload", "false");
 			System.setProperty("jnati.allowDirectLoad", "false");
 			ArtefactDescriptor loc = NativeArtefactLocator.findArtefact("test-deploy", "1.0");
