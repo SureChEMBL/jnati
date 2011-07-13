@@ -47,7 +47,7 @@ OBJECTS =	$(OBJ_DIR)/nativewrapper.o
 JNI_HEADER_DIR = target/generated-sources
 JNI_HEADERS = $(JNI_HEADER_DIR)/net_sf_jnati_testharness_NativeWrapper.h
 
-MANIFEST_FILE = $(OUT_DIR)/MANIFEST.XML
+MANIFEST_FILE = $(OUT_DIR)/MANIFEST.xml
 
 ## Define default target
 
