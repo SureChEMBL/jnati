@@ -4,7 +4,7 @@
     <parent>
         <groupId>net.sf.jnati</groupId>
         <artifactId>jnati</artifactId>
-        <version>0.4</version>
+        <version>0.5-SNAPSHOT</version>
     </parent>
 
     <groupId>net.sf.jnati</groupId>
@@ -24,7 +24,7 @@
             <plugin>
                 <groupId>net.sf.jnati</groupId>
                 <artifactId>jnati-maven-plugin</artifactId>
-                <version>0.4</version>
+                <version>0.5-SNAPSHOT</version>
                 <executions>
                     <execution>
                         <goals>
