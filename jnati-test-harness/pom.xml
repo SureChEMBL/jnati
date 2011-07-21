@@ -8,7 +8,7 @@
     </parent>
 
     <groupId>net.sf.jnati</groupId>
-    <artifactId>jnati-testharness</artifactId>
+    <artifactId>jnati-test-harness</artifactId>
     <name>jnati - Test Harness</name>
 
     <build>
