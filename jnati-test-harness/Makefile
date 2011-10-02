@@ -10,9 +10,10 @@ ifndef JAVA_HOME
 f := $(error JAVA_HOME is not defined, ensure that it points to a JDK)
 endif
 
-ifeq (, $(wildcard $(JAVA_HOME)/bin/javah))
-f := $(error javah not found, check that JAVA_HOME is pointing to a JDK)
-endif
+# Causes problems on windows builds
+# ifeq (, $(wildcard $(JAVA_HOME)/bin/javah))
+# f := $(error javah not found, check that JAVA_HOME is pointing to a JDK)
+# endif
 
 JAVAH = "$(JAVA_HOME)/bin/javah"
 
