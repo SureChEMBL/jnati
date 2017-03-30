@@ -20,8 +20,12 @@ jnati.autoDeploy = true
 # allow direct loading of local artefacts (not in repository)
 jnati.allowDirectLoad = true
 
+### Turned off for debian build, as it's insecure!
+### It's still possible to override it per artefact basis, so
+### for every such artefact that depends on libjnati-java pakage
+### (libjni-inchi-java) it will be turned off as well.
 # allow download of missing artefacts
-jnati.allowDownload = true
+jnati.allowDownload = false
 
 # download locations, separated by semicolons. Actual semicolons in URLs should
 # be written '%3B'
