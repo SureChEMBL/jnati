@@ -21,4 +21,6 @@ Architecture: all
 Depends:
  ${misc:Depends},
  ${maven:Depends},
+ liblog4j1.2-java (>= 1.2.14),
+ libmaven2-core-java (>= 2.2.1),
 Description: Java library for working with native, non-Java libraries 
