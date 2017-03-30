@@ -4,8 +4,16 @@ Priority: optional
 Maintainer: Yury Zavarin <yzavarin@ebi.ac.uk>
 Build-Depends:
  debhelper (>= 9),
- default-jdk,
+ default-jdk (>= 1.5),
+ junit4 (>= 4.5),
+ libmaven-assembly-plugin-java,
+ libmaven-compiler-plugin-java (>= 2.3.1),
+ libmaven-resources-plugin-java (>= 2.4.1),
+ libsurefire-java (>= 2.5),
  maven-debian-helper (>= 1.5),
+Build-Depends-Indep:
+ liblog4j1.2-java (>= 1.2.14),
+ libmaven2-core-java (>= 2.2.1),
 Standards-Version: 3.9.7
 
 Package: libjnati-java
