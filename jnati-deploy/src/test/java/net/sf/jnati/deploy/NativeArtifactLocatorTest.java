@@ -73,8 +73,7 @@ public class NativeArtifactLocatorTest {
 			config.setProperty("jnati.repositoryUrls.test-locate.1.0", "false");
 			ArtefactDescriptor loc = NativeArtefactLocator.findArtefact("test-locate", "1.0", config);
 			
-			// Fixed path here for Debian build
-			File target = new File("tmpdir-testLocate/test-locate/1.0/NOOS-NOARCH").getAbsoluteFile();
+			File target = new File("target/test-classes/META-INF/test-locate/1.0/NOOS-NOARCH").getAbsoluteFile();
 			assertEquals(target, loc.getPath().getAbsoluteFile());
 			assertTrue(new File(target, "testfile.txt").exists());
 		} finally {
