@@ -50,7 +50,6 @@
         <connection>scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.4</connection>
         <developerConnection>scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.4</developerConnection>
         <url>http://jnati.svn.sourceforge.net/viewvc/jnati/jnati/tags/jnati-0.4</url>
->>>>>>> v0.4
     </scm>
 
     <developers>
