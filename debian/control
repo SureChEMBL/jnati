@@ -6,12 +6,15 @@ Build-Depends:
  debhelper (>= 9),
  default-jdk (>= 1.5),
  junit4 (>= 4.5),
- libmaven-assembly-plugin-java,
+ libmaven-assembly-plugin-java (>= 2.2.1),
  libmaven-compiler-plugin-java (>= 2.3.1),
+ libmaven-deploy-plugin-java (>= 2.5),
+ libmaven-exec-plugin-java (>= 1.1.1),
  libmaven-resources-plugin-java (>= 2.4.1),
- libsurefire-java (>= 2.5),
+ libsurefire-java (>= 2.7.1),
  maven-debian-helper (>= 1.5),
 Build-Depends-Indep:
+ libcommons-io-java (>= 2.0.1),
  liblog4j1.2-java (>= 1.2.14),
  libmaven2-core-java (>= 2.2.1),
 Standards-Version: 3.9.7
@@ -21,6 +24,7 @@ Architecture: all
 Depends:
  ${misc:Depends},
  ${maven:Depends},
+ libcommons-io-java (>= 2.0.1),
  liblog4j1.2-java (>= 1.2.14),
  libmaven2-core-java (>= 2.2.1),
-Description: Java library for working with native, non-Java libraries 
+Description: Java library for working with native, non-Java libraries
