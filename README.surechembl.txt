@@ -23,3 +23,7 @@ Fetch the data from SVN:
 $ git svn fetch
 
 After that "git branch -r" will show "svn/<smth>" remote branches.
+
+
+jnati.allowDownload is set to false for debian build for security reasons.
+See jnati-deploy/src/main/resources/META-INF/jnati/jnati.default-properties
