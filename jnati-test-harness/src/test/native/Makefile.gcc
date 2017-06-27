@@ -1,0 +1,10 @@
+
+LDFLAGS += -s
+CFLAGS += -I"${JAVA_HOME}/include" -I$(JNI_HEADER_DIR)
+CFLAGS += -Os -ansi -pedantic
+
+$(TARGET): $(OBJECTS)
+	$(LINK.c) $^ -o $@
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(JNI_HEADERS)
+	$(COMPILE.c) $< -o $@ -I$(JNI_HEADER_DIR)

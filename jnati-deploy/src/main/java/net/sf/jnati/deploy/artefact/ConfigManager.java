@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -26,6 +26,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * <p>Configuration hierarchy:</p>
@@ -36,7 +37,7 @@ import java.util.Map;
  * <tr><td>global properties file [ ${jnati.settingsFile} ]</td></tr>
  * <tr><td>instance defaults</td></tr>
  * <tr><td>global defaults</td></tr>
- * @author sea36
+ * @author Sam Adams
  *
  */
 public class ConfigManager {
@@ -110,7 +111,7 @@ public class ConfigManager {
 	
 	
 
-	public static Configuration getConfig(String id, String version) throws IOException {
+	public static Configuration getConfig(String id, String version, Properties configuration) throws IOException {
 
 		Configuration defaultConfig = getDefaultConfig();
 		
@@ -129,7 +130,7 @@ public class ConfigManager {
 			throw new FileNotFoundException("Default config file missing: " + DEFAULT_INSTANCE_CONFIG_FILE);
 		}
 		
-		Configuration config = new Configuration(defaultConfig, params);
+		Configuration config = new Configuration(defaultConfig, params, configuration);
 		InputStream i1 = u1.openStream();
 		LOG.debug("Loading instance defaults: " + u1);
 		try {
@@ -138,7 +139,7 @@ public class ConfigManager {
 			i1.close();
 		}
 		
-		String s1 = "${jnati.artefactId}.settingsFile";
+		String s1 = "jnati.settingsFile.${jnati.artefactId}";
 		String fn1 = config.getProperty(s1);
 		if (fn1 == null) {
 			throw new IOException(s1 + " not defined");
@@ -171,10 +172,10 @@ public class ConfigManager {
 
 
 
-	public static void loadConfiguration(Artefact artefact) throws ConfigurationException {
+	public static void loadConfiguration(Artefact artefact, Properties configuration) throws ConfigurationException {
 		
 		try {
-			Configuration config = getConfig(artefact.getId(), artefact.getVersion());
+			Configuration config = getConfig(artefact.getId(), artefact.getVersion(), configuration);
 			artefact.setConfiguration(config);
 		} catch (IOException e) {
 			throw new ConfigurationException("Error loading configuration", e);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -27,6 +27,9 @@ import net.sf.jnati.deploy.source.FileSource;
 
 import org.apache.log4j.Logger;
 
+/**
+ * @author Sam Adams
+ */
 public class LocalRepository extends ArtefactRepository {
 	
 	private static final Logger LOG = Logger.getLogger(LocalRepository.class);
@@ -45,6 +48,14 @@ public class LocalRepository extends ArtefactRepository {
 					+ artefact.getOsArch();
 		return new File(root, path);
 	}
+
+    private File getPath(Artefact artefact, int index) {
+		String path = artefact.getId() + FS
+					+ artefact.getVersion() + FS
+					+ artefact.getOsArch()
+                    + "~" + index;
+		return new File(root, path);
+	}
 	
 	public boolean containsArtefact(Artefact artefact) {
 		File file = getPath(artefact);
@@ -61,9 +72,29 @@ public class LocalRepository extends ArtefactRepository {
 		}
 		return Collections.singletonList(new FileSource(path, artefact));
 	}
+
+    public List<? extends ArtefactSource> getArtefactSource(Artefact artefact, int index) {
+		LOG.info("Searching local repository for: " + artefact);
+
+		File path = getPath(artefact, index);
+		LOG.debug("Artefact path: " + path);
+		if (!path.isDirectory()) {
+			return Collections.emptyList();
+		}
+		return Collections.singletonList(new FileSource(path, artefact));
+	}
 	
 	public File createArtefact(Artefact artefact) throws NativeCodeException {
 		File path = getPath(artefact);
+		LOG.info("Creating artefact: " + path);
+		if (!path.mkdirs()) {
+			throw new NativeCodeException("Error creating directory: " + path);
+		}
+		return path;
+	}
+
+    public File createArtefact(Artefact artefact, int index) throws NativeCodeException {
+		File path = getPath(artefact, index);
 		LOG.info("Creating artefact: " + path);
 		if (!path.mkdirs()) {
 			throw new NativeCodeException("Error creating directory: " + path);

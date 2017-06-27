@@ -47,7 +47,7 @@ Can I force jnati to use a particular platform/architecture on my system?
 Set the following property:
 jnati.osarch = {operating system}-{architecture}
 or to only force this for a particular artefact:
-{artefactId}.osarch = {operating system}-{architecture}
+jnati.osarch.{artefactId} = {operating system}-{architecture}
 
 
 Can I specify an alternative online repository?
@@ -55,7 +55,7 @@ Can I specify an alternative online repository?
 Set the following property:
 jnati.repositoryUrls = http://foo.example.com/repo;http://bar.example.com/repo
 or for a particular artefact:
-{artefactId}.repositoryUrls = http://foo.example.com/repo;${jnati.repositoryUrls}
+jnati.repositoryUrls.{artefactId} = http://foo.example.com/repo;${jnati.repositoryUrls}
 
 
 Can I prevent jnati attempting to download artefacts?

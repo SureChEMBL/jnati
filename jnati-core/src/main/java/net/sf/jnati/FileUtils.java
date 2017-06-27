@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -16,14 +16,11 @@
  */
 package net.sf.jnati;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.Reader;
+import java.io.*;
 
+/**
+ * @author Sam Adams
+ */
 public class FileUtils {
 
     private static final int BUFFER_SIZE = 4096;

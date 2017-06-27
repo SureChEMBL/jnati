@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -26,8 +26,7 @@ import java.util.Properties;
  * Values ${name} are substituted with either parameters specified on
  * construction, or other properties. Parameters can also be included in
  * property names, but other properties cannot.
- * @author sea36
- *
+ * @author Sam Adams
  */
 public class ResolvingProperties extends Properties {
 
@@ -191,8 +190,9 @@ public class ResolvingProperties extends Properties {
     				key = newkey;
     				i0 = key.indexOf("${", i0);
     			} else {
-    				LOG.warn("Unknown parameter: " + k);
+                    LOG.warn("Unknown parameter: " + k);
         			i0 = key.indexOf("${", i0+1);
+                    throw new RuntimeException();
         		}
     		} else {
     			i0 = key.indexOf("${", i0+1);

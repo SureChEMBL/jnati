@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -22,6 +22,9 @@ import java.util.List;
 import net.sf.jnati.deploy.artefact.Artefact;
 import net.sf.jnati.deploy.source.ArtefactSource;
 
+/**
+ * @author Sam Adams
+ */
 public abstract class ArtefactRepository {
 	
 	public abstract List<? extends ArtefactSource> getArtefactSource(Artefact artefact) throws IOException;

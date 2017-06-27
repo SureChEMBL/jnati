@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -34,6 +34,9 @@ import net.sf.jnati.deploy.source.JarSource;
 import net.sf.jnati.deploy.source.UrlSource;
 import org.apache.log4j.Logger;
 
+/**
+ * @author Sam Adams
+ */
 public class ClasspathRepository extends ArtefactRepository {
 
 	private static final Logger LOG = Logger.getLogger(ClasspathRepository.class);

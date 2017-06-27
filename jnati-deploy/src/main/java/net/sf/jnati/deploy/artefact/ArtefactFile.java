@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -16,7 +16,9 @@
  */
 package net.sf.jnati.deploy.artefact;
 
-
+/**
+ * @author Sam Adams
+ */
 public class ArtefactFile {
 
 	private String path;

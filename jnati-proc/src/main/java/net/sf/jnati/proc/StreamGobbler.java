@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -16,7 +16,6 @@
  */
 package net.sf.jnati.proc;
 
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -25,7 +24,7 @@ import org.apache.log4j.Logger;
 
 /**
  * Class that gobbles content from (optionally saving it) an input stream.
- * @author sea36
+ * @author Sam Adams
  *
  */
 public class StreamGobbler extends Thread {

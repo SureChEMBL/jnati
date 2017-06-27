@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 /**
  * Implements a multi-layered configuration. There are three layers of
@@ -28,7 +29,7 @@ import java.util.Map;
  * .properties file) or set (from a Map), while runtime properties are
  * retrieved from System.getProperties().
  *
- * @author sea36 <sea36 at users.sourceforge.net>
+ * @author Sam Adams
  */
 public class Configuration {
 
@@ -65,7 +66,7 @@ public class Configuration {
 	 * @param parentConfig
 	 * @param params
 	 */
-	public Configuration(Configuration parentConfig, Map<String,String> params) {
+	public Configuration(Configuration parentConfig, Map<String,String> params, Properties configuration) {
 		if (parentConfig.parameters != null) {
 			this.parameters = new HashMap<String, String>(parentConfig.parameters);
 			if (params != null) {
@@ -76,11 +77,15 @@ public class Configuration {
 		}
 		base = new ResolvingProperties(parameters);
 		base.putAll(parentConfig.base);
+//        base.putAll(configuration);
 		loaded = new ResolvingProperties(base, parameters);
 		loaded.putAll(parentConfig.loaded);
 		runtime = new ResolvingProperties(loaded, parameters);
 		runtime.putAll(parentConfig.runtime);
 		runtime.putAll(System.getProperties());
+        if (configuration != null) {
+            runtime.putAll(configuration);
+        }
 	}
 
 

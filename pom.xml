@@ -5,6 +5,15 @@
     <groupId>net.sf.jnati</groupId>
     <artifactId>jnati</artifactId>
     <version>debian</version>
+
+    <!--
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+    -->
+
     <packaging>pom</packaging>
 
     <name>jnati</name>
@@ -34,12 +43,14 @@
         <module>jnati-deploy</module>
         <module>jnati-proc</module>
         <module>jnati-maven-plugin</module>
+        <module>jnati-test-harness</module>
     </modules>
 
     <scm>
-        <connection>scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.3</connection>
-        <developerConnection>scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.3</developerConnection>
-        <url>http://jnati.svn.sourceforge.net/viewvc/jnati/jnati/tags/jnati-0.3</url>
+        <connection>scm:svn:http://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.4</connection>
+        <developerConnection>scm:svn:https://jnati.svn.sourceforge.net/svnroot/jnati/jnati/tags/jnati-0.4</developerConnection>
+        <url>http://jnati.svn.sourceforge.net/viewvc/jnati/jnati/tags/jnati-0.4</url>
+>>>>>>> v0.4
     </scm>
 
     <developers>
@@ -47,7 +58,6 @@
             <id>sea36</id>
             <name>Sam Adams</name>
             <email>sea36::at::users.sourceforge.net</email>
-            <organization>Unilever Centre for Molecular Science Informatics, University of Cambridge</organization>
         </developer>
     </developers>
 
@@ -63,41 +73,38 @@
     </contributors>
 
     <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
-                <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.5</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>net.sf.jnati.SystemTyper</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.2</version>
+                    <configuration>
+                        <source>1.5</source>
+                        <target>1.5</target>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.6</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.4.1</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.17</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
     <dependencyManagement>
@@ -125,98 +132,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <repositories>
-        <repository>
-            <id>jnati</id>
-            <name>jnati Maven Repository</name>
-            <url>http://jnati.sourceforge.net/m2repo/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>jnati-snapshots</id>
-            <name>jnati Maven Repository</name>
-            <url>http://jnati.sourceforge.net/m2-snapshot-repo/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>jnati-releases</id>
-            <url>file:///home/sea36/sites/jnati/htdocs/m2repo</url>
-        </repository>
-        <snapshotRepository>
-            <id>jnati-snapshots</id>
-            <url>file:///home/sea36/sites/jnati/htdocs/m2-snapshot-repo/</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-        <site>
-            <id>jnati-site</id>
-            <url>http://jnati.sourceforge.net</url>
-        </site>
-    </distributionManagement>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.1.2</version>
-                <!--
-                                <reportSets>
-                                  <reportSet>
-                                    <reports>
-                                      <report>summary</report>
-                                      <report>dependencies</report>
-                                      <report>scm</report>
-                                      <report>license</report>
-                                      <report>project-team</report>
-                                      <report>plugins</report>
-                                      <report>cim</report>
-                                      <report>mailing-list</report>
-                                    </reports>
-                                  </reportSet>
-                                </reportSets>
-                -->
-            </plugin>
-            <plugin>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.6.1</version>
-                <reportSets>
-                    <reportSet>
-                        <reports>
-                            <report>javadoc</report>
-                        </reports>
-                    </reportSet>
-                </reportSets>
-                <configuration>
-                    <aggregate>true</aggregate>
-                    <encoding>UTF-8</encoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <aggregate>true</aggregate>
-                    <inputEncoding>UTF-8</inputEncoding>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.17</version>
-            </plugin>
-        </plugins>
-    </reporting>
 
 </project>

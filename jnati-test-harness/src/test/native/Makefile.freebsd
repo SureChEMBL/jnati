@@ -1,0 +1,6 @@
+
+CFLAGS += -I$(JAVA_HOME)/include/freebsd -fPIC
+LDFLAGS += -shared
+
+LIB_PREFIX = lib
+LIB_SUFFIX = .so

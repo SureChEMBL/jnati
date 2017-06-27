@@ -1,5 +1,5 @@
 /*
- * Copyright 2008-2010 Sam Adams <sea36 at users.sourceforge.net>
+ * Copyright 2008-2011 Sam Adams <sea36 at users.sourceforge.net>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published
@@ -24,6 +24,9 @@ import java.util.List;
 import net.sf.jnati.ArtefactDescriptor;
 import net.sf.jnati.config.Configuration;
 
+/**
+ * @author Sam Adams
+ */
 public class Artefact {
 
 	private String id;
@@ -49,8 +52,14 @@ public class Artefact {
 		this.id = id;
 		this.version = version;
 	}
-	
-	public String getId() {
+
+    public Artefact(Artefact artefact) {
+        this.id = artefact.getId();
+        this.version = artefact.getVersion();
+        this.config = artefact.getConfiguration();
+    }
+
+    public String getId() {
 		return id;
 	}
 	
@@ -101,7 +110,7 @@ public class Artefact {
 	
 	
 	public String getOsArch() {
-		return getProperty("${jnati.artefactId}.${jnati.artefactVersion}.osarch");
+		return getProperty("jnati.osarch.${jnati.artefactId}.${jnati.artefactVersion}");
 	}
 	
 	public File getLocalRepository() {
@@ -114,6 +123,16 @@ public class Artefact {
 		String s = getProperty("jnati.autoDeploy");
 		return Boolean.parseBoolean(s);
 	}
+
+    public boolean isMultideployEnabled() {
+        String s = getProperty("jnati.enableMultideploy.${jnati.artefactId}.${jnati.artefactVersion}");
+        return Boolean.parseBoolean(s);
+    }
+
+    public int getMaxMultideployCount() {
+        String s = getProperty("jnati.maxMultideployCount.${jnati.artefactId}.${jnati.artefactVersion}");
+        return Integer.parseInt(s);
+    }
 	
 	public boolean getAllowLocal() {
 		String s = getProperty("jnati.allowDirectLoad");
@@ -126,7 +145,7 @@ public class Artefact {
 	}
 	
 	public List<String> getRepositoryUrls() {
-		String s = getProperty("${jnati.artefactId}.${jnati.artefactVersion}.repositoryUrls");
+		String s = getProperty("jnati.repositoryUrls.${jnati.artefactId}.${jnati.artefactVersion}");
 		List<String> list = new ArrayList<String>();
 		for (String u : s.split(";")) {
 			u = u.trim();
